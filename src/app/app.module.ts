@@ -24,6 +24,11 @@ import { StoreModule } from '@ngrx/store';
 import { reducers } from './reducers';
 import { TestComponent } from './pages/test/test.component';
 import { CreateCVComponent } from './pages/createcv/createcv.component';
+import { HomeHeaderComponent } from './components/pages/home/home-header/home-header.component';
+import { HomeFooterComponent } from './components/pages/home/home-footer/home-footer.component';
+import { HomeBodyComponent } from './components/pages/home/home-body/home-body.component';
+import { UserHomeComponent } from './pages/user-home/user-home.component';
+import { SignInComponent } from './pages/sign-in/sign-in.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +48,11 @@ import { CreateCVComponent } from './pages/createcv/createcv.component';
     ReferenceComponent,
     LoginComponent,
     CreateCVComponent,
+    HomeHeaderComponent,
+    HomeFooterComponent,
+    HomeBodyComponent,
+    UserHomeComponent,
+    SignInComponent,
   ],
   imports: [
     BrowserModule,

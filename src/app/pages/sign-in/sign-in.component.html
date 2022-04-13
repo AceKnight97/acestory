@@ -1,0 +1,19 @@
+<div class="login-body-form">
+  <form [formGroup]="loginForm" (ngSubmit)="onFormSubmit()">
+    <h2>Login form</h2>
+
+    <label>Email</label>
+    <input formControlName="email" title="email" />
+    <label>Password</label>
+    <input formControlName="password" type="password" title="password" />
+
+    <button
+      mat-raised-button
+      color="accent"
+      class="login-body-btn-login"
+      type="submit"
+    >
+      Sign in
+    </button>
+  </form>
+</div>

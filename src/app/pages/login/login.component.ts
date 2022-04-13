@@ -19,6 +19,7 @@ export class LoginComponent implements OnInit {
   auth: Observable<AuthInterface> | undefined;
   loginForm;
   registerForm;
+  currentPage: String = 'SIGN_IN';
 
   constructor(
     private fb: FormBuilder,
