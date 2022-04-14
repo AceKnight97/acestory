@@ -29,6 +29,7 @@ import { HomeFooterComponent } from './components/pages/home/home-footer/home-fo
 import { HomeBodyComponent } from './components/pages/home/home-body/home-body.component';
 import { UserHomeComponent } from './pages/user-home/user-home.component';
 import { SignInComponent } from './pages/sign-in/sign-in.component';
+import { SignUpComponent } from './pages/sign-up/sign-up.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import { SignInComponent } from './pages/sign-in/sign-in.component';
     HomeBodyComponent,
     UserHomeComponent,
     SignInComponent,
+    SignUpComponent,
   ],
   imports: [
     BrowserModule,

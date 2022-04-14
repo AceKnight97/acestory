@@ -2,9 +2,6 @@
 @import "./spacing";
 @import "./reused";
 
-form {
-  // overflow: auto;
-}
 button:disabled {
   background-color: #ededed !important;
   cursor: not-allowed;

@@ -15,12 +15,12 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
-    children:[
-      {
-        path: 'sign-in', // child route path
-        component: SignInComponent, // child route component that the router renders
-      },
-    ]
+    // children:[
+    //   {
+    //     path: 'sign-in', // child route path
+    //     component: SignInComponent, // child route component that the router renders
+    //   },
+    // ]
   },
   { path: 'createcv', component: CreateCVComponent },
   { path: 'test', component: TestComponent },

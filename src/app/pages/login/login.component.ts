@@ -9,7 +9,9 @@ import { AuthInterface } from 'src/app/reducers/auth/auth';
 import { DigitalcvComponent } from 'src/app/services/digitalcv/digitalcv.component';
 import * as AuthActions from '../../reducers/auth/auth.action';
 import { Router } from '@angular/router';
+import { LOGIN_DATA } from './login.service';
 
+const { SIGN_IN, SIGN_UP, FORGOT_PASSWORD } = LOGIN_DATA;
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -17,9 +19,10 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   auth: Observable<AuthInterface> | undefined;
-  loginForm;
-  registerForm;
-  currentPage: String = 'SIGN_IN';
+  loginForm: FormBuilder | any;
+  registerForm: FormBuilder | any;
+  currentPage: String = SIGN_IN;
+  aasd = new Object();
 
   constructor(
     private fb: FormBuilder,
@@ -28,27 +31,24 @@ export class LoginComponent implements OnInit {
     private localStorage: LocalStorage,
     private _router: Router
   ) {
-    this.auth = this.store.select('auth');
-    this.loginForm = this.fb.group({
-      email: 'aceknight@gmail.com',
-      password: '123456',
-    });
-    this.registerForm = this.fb.group({
-      username: 'AceKnight97',
-      email: 'aceknight@gmail.com',
-      password: '123456',
-      confirmPassword: '123456',
-    });
-    this.auth.subscribe((saveData: AuthInterface) => {
-      if (saveData.isSuccess) {
-        this._router.navigate(['home']);
-      }
-    });
   }
 
   public onFileChanged(event: any) {}
 
   ngOnInit(): void {}
+
+  onClickSignUp(): void {
+    this.currentPage = SIGN_UP;
+  }
+
+  onClickSignIn(): void {
+    this.currentPage = SIGN_IN;
+  }
+
+  getCurrentPage() {
+    console.log({getCurrentPage: this.currentPage})
+    return this.currentPage;
+  }
 
   onFormSubmit() {
     const loginForm = this.loginForm.value;
