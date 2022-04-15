@@ -1,5 +1,12 @@
-import { Component, Input, OnChanges, OnInit, Output , EventEmitter} from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import {
+  Component,
+  Input,
+  OnChanges,
+  OnInit,
+  Output,
+  EventEmitter,
+} from '@angular/core';
+import { FormArray, FormBuilder, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import * as _ from 'lodash';
@@ -15,14 +22,13 @@ import { SignInService } from './sign-in.service';
 })
 export class SignInComponent implements OnInit, OnChanges {
   @Output() onClickSignUp = new EventEmitter<any>();
+  // @Input() onClickSignUp: Function= ()=>{};
 
-  signUp(): void {
-    this.onClickSignUp.emit();
-  }
-
-  loginForm;
+  signInForm;
   emailErr: String = '';
   passwordErr: String = '';
+  arr = _.range(1, 20);
+  // aaa = '';
 
   constructor(
     private fb: FormBuilder,
@@ -32,24 +38,51 @@ export class SignInComponent implements OnInit, OnChanges {
     private _router: Router,
     private signInService: SignInService
   ) {
-    this.loginForm = this.fb.group({
-      email: '',
-      password: '',
+    this.signInForm = this.fb.group({
+      email: [''],
+      password: [''],
+      selectedArr: [['']],
     });
   }
 
+  get selectedArr() {
+    return this.signInForm.get('selectedArr') as FormControl;
+  }
+
   ngOnInit(): void {
-    this.loginForm.valueChanges.subscribe(() => {
-      this.emailErr = '';
-      this.passwordErr = '';
+    this.signInForm.valueChanges.subscribe((signInForm) => {
+      // this.emailErr = '';
+      // this.passwordErr = '';
     });
   }
 
   ngOnChanges(): void {}
 
+  signUp(): void {
+    this.onClickSignUp.emit();
+    // this.onClickSignUp();
+  }
+  add(): void {
+    // this.selectedArr.push(new FormControl());
+    this.selectedArr.value.push('');
+  }
+  onDelete(idx: number): void {
+    this.selectedArr.value.splice(idx, 1);
+  }
+
+  getArr(val: any): number[] {
+    const newArr = _.difference([...this.arr], [...this.selectedArr.value]);
+    console.log({ newArr, val, values: this.selectedArr.value });
+    return [...newArr];
+    // return [...this.arr]
+  }
+
+  onChange(e: any, idx: number): void {
+    this.selectedArr.value[idx] = e.value;
+  }
 
   onFormSubmit() {
-    const { email, password } = this.loginForm.value;
+    const { email, password } = this.signInForm.value;
     console.log({ email, password });
     const checking = this.signInService.checkingParams(email, password);
     if (!_.isEmpty(checking)) {
@@ -58,7 +91,7 @@ export class SignInComponent implements OnInit, OnChanges {
     }
 
     // this.digitalcvSv
-    //   .login(loginForm.email, loginForm.password)
+    //   .login(signInForm.email, signInForm.password)
     //   .subscribe((login: MutationResponse) => {
     //     // console.log({ login });
     //     try {

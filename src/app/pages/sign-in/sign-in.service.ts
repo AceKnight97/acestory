@@ -1,27 +1,21 @@
 import { Injectable } from '@angular/core';
-
-interface CheckingSignIn {
-  emailErr?:String,
-  passwordErr?: String
-}
+import { LoginHelpers } from 'src/app/helpers/login.helper';
+import { CheckingSignIn } from 'src/app/interfaces/pages/home.interface';
 
 @Injectable({
   providedIn: 'root',
 })
 export class SignInService {
-  constructor() {}
+  constructor(private loginHp: LoginHelpers) {}
 
-  isValidEmail = (email: String = '') => {
-    const re =
-      /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(String(email.trim()).toLowerCase());
-  };
-
-  checkingParams = (email: String = '', password: String = ''): CheckingSignIn => {
+  checkingParams = (
+    email: String = '',
+    password: String = ''
+  ): CheckingSignIn => {
     if (!email) {
       return { emailErr: 'Email is empty!' };
     }
-    if (!this.isValidEmail(email)) {
+    if (!this.loginHp.isValidEmail(email)) {
       return { emailErr: 'Email format is incorrect!' };
     }
     if (!password) {

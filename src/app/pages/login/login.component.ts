@@ -39,6 +39,7 @@ export class LoginComponent implements OnInit {
 
   onClickSignUp(): void {
     this.currentPage = SIGN_UP;
+    console.log({currentPage: this.currentPage})
   }
 
   onClickSignIn(): void {

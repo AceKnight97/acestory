@@ -1,10 +1,11 @@
 <div class="sign-in">
+  {{ signInForm.value|json}}
   <form
-    [formGroup]="loginForm"
+    [formGroup]="signInForm"
     (ngSubmit)="onFormSubmit()"
     class="sign-in-form"
   >
-    <label>Email</label>
+    <!-- <label>Email</label>
     <input formControlName="email" title="email" />
     <div class="err-mes">{{ emailErr }}</div>
 
@@ -18,6 +19,30 @@
       <button mat-button  type="button">Forgot password</button>
 
       <button mat-button (click)="signUp()" type="button">Sign up</button>
-    </div>
+    </div> -->
+    <button mat-button color="primary" (click)="add()" type="button" style="margin-bottom: 0.5rem;">
+      Add
+    </button>
+
+      <div *ngFor="let item of selectedArr.value; index as idx" class="flex">
+          <mat-form-field appearance="fill">
+            <mat-label>Testing</mat-label>
+            <mat-select [value]="item" (selectionChange)="onChange($event, idx)">
+              <div *ngFor="let x of getArr(item)">
+                <mat-option [value]="x">{{ x }}</mat-option>
+              </div>
+            </mat-select>
+          </mat-form-field>
+          <button
+            mat-button
+            color="primary"
+            (click)="onDelete(idx)"
+            type="button"
+          >
+            X
+          </button>
+      </div>
+
+
   </form>
 </div>

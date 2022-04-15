@@ -9,14 +9,17 @@
       />
     </div>
     <div class="login-body-right">
-      <img
+      <div class="login-body-right-top">
+        <img
         src="../../../assets/images/hat_2.png"
         alt="Logo icon"
         title="Logo"
         class="login-body-logo"
       />
+      </div>
 
-      <div [ngSwitch]="currentPage">
+      <div class="login-body-right-bottom">
+        <div [ngSwitch]="currentPage">
         <app-sign-up *ngSwitchCase="'SIGN_UP'"
         (onClickSignIn)="onClickSignIn()"
         ></app-sign-up>
@@ -25,6 +28,7 @@
           (onClickSignUp)="onClickSignUp()"
         ></app-sign-in>
       </div>
+    </div>
 
     </div>
   </div>
