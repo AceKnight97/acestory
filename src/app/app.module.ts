@@ -32,6 +32,7 @@ import { SignInComponent } from './pages/sign-in/sign-in.component';
 import { SignUpComponent } from './pages/sign-up/sign-up.component';
 import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
 import { CodeInputModule } from 'angular-code-input';
+import { NewsFeedComponent } from './pages/news-feed/news-feed.component';
 
 @NgModule({
   declarations: [
@@ -58,6 +59,7 @@ import { CodeInputModule } from 'angular-code-input';
     SignInComponent,
     SignUpComponent,
     ForgotPasswordComponent,
+    NewsFeedComponent,
   ],
   imports: [
     BrowserModule,

@@ -9,7 +9,6 @@ import { MatSelectModule } from '@angular/material/select';
 import { LoginComponent } from './pages/login/login.component';
 import { TestComponent } from './pages/test/test.component';
 import { CreateCVComponent } from './pages/createcv/createcv.component';
-import { SignInComponent } from './pages/sign-in/sign-in.component';
 
 const routes: Routes = [
   {
