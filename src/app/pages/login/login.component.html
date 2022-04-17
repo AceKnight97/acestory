@@ -2,7 +2,7 @@
   <div class="login-body">
     <div class="login-body-left">
       <img
-        src="../../../assets/images/hat_1.png"
+        src="assets/hat_1.png"
         alt="Logo icon"
         title="Logo"
         class="login-body-logo"
@@ -11,25 +11,25 @@
     <div class="login-body-right">
       <div class="login-body-right-top">
         <img
-        src="../../../assets/images/hat_2.png"
-        alt="Logo icon"
-        title="Logo"
-        class="login-body-logo"
-      />
+          src="assets/hat_2.png"
+          alt="Logo icon"
+          title="Logo"
+          class="login-body-logo"
+        />
       </div>
 
       <div class="login-body-right-bottom">
         <div [ngSwitch]="currentPage">
-        <app-sign-up *ngSwitchCase="'SIGN_UP'"
-        (onClickSignIn)="onClickSignIn()"
-        ></app-sign-up>
-        <app-sign-in
-          *ngSwitchDefault
-          (onClickSignUp)="onClickSignUp()"
-        ></app-sign-in>
+          <app-sign-up
+            *ngSwitchCase="'SIGN_UP'"
+            (onClickSignIn)="onClickSignIn()"
+          ></app-sign-up>
+          <app-sign-in
+            *ngSwitchDefault
+            (onClickSignUp)="onClickSignUp()"
+          ></app-sign-in>
+        </div>
       </div>
-    </div>
-
     </div>
   </div>
 </div>

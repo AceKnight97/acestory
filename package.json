@@ -4,9 +4,12 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "homepage": "https://AceKnight97.github.io/acestory",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng g c pages/createcv --skip-tests"
+    "test": "ng g c pages/createcv --skip-tests",
+    "predeploy": "ng build",
+    "deploy": "ngh --dir dist/acestory"
   },
   "private": true,
   "dependencies": {
@@ -36,6 +39,7 @@
     "@types/lodash": "^4.14.181",
     "@types/node": "^12.11.1",
     "axios": "^0.24.0",
+    "gh-pages": "^3.2.3",
     "jasmine-core": "~3.8.0",
     "karma": "~6.3.0",
     "karma-chrome-launcher": "~3.1.0",

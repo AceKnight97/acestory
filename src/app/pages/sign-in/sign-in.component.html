@@ -1,11 +1,11 @@
 <div class="sign-in">
-  {{ signInForm.value|json}}
+  <!-- {{ signInForm.value | json }} -->
   <form
     [formGroup]="signInForm"
     (ngSubmit)="onFormSubmit()"
     class="sign-in-form"
   >
-    <!-- <label>Email</label>
+    <label>Email</label>
     <input formControlName="email" title="email" />
     <div class="err-mes">{{ emailErr }}</div>
 
@@ -16,11 +16,11 @@
     <button mat-raised-button type="submit" class="sign-in-btn">Sign in</button>
 
     <div class="sign-in-footer">
-      <button mat-button  type="button">Forgot password</button>
+      <button mat-button type="button">Forgot password</button>
 
       <button mat-button (click)="signUp()" type="button">Sign up</button>
-    </div> -->
-    <button mat-button color="primary" (click)="add()" type="button" style="margin-bottom: 0.5rem;">
+    </div>
+    <!-- <button mat-button color="primary" (click)="add()" type="button" style="margin-bottom: 0.5rem;">
       Add
     </button>
 
@@ -41,8 +41,6 @@
           >
             X
           </button>
-      </div>
-
-
+      </div> -->
   </form>
 </div>

@@ -7,7 +7,7 @@ import { DigitalcvComponent } from './services/digitalcv/digitalcv.component';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'angu-store';
+  title = 'acestory';
   constructor(private digitalcvSv: DigitalcvComponent) {
     // this.digitalcvSv.getCVs().subscribe((cvs) => {
     //   console.log({ cvs });
