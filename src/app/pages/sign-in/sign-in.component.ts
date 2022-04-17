@@ -22,13 +22,17 @@ import { SignInService } from './sign-in.service';
 })
 export class SignInComponent implements OnInit, OnChanges {
   @Output() onClickSignUp = new EventEmitter<any>();
-  // @Input() onClickSignUp: Function= ()=>{};
+  @Output() onClickForgot = new EventEmitter<any>();
 
   signInForm;
   emailErr: String = '';
   passwordErr: String = '';
   arr = _.range(1, 20);
   // aaa = '';
+
+  get selectedArr() {
+    return this.signInForm.get('selectedArr') as FormControl;
+  }
 
   constructor(
     private fb: FormBuilder,
@@ -45,10 +49,6 @@ export class SignInComponent implements OnInit, OnChanges {
     });
   }
 
-  get selectedArr() {
-    return this.signInForm.get('selectedArr') as FormControl;
-  }
-
   ngOnInit(): void {
     this.signInForm.valueChanges.subscribe((signInForm) => {
       // this.emailErr = '';
@@ -60,12 +60,16 @@ export class SignInComponent implements OnInit, OnChanges {
 
   signUp(): void {
     this.onClickSignUp.emit();
-    // this.onClickSignUp();
   }
+
+  forgot(): void {
+    this.onClickForgot.emit();
+  }
+
   add(): void {
-    // this.selectedArr.push(new FormControl());
     this.selectedArr.value.push('');
   }
+
   onDelete(idx: number): void {
     this.selectedArr.value.splice(idx, 1);
   }

@@ -4,9 +4,6 @@
   width: 240px;
   height: 100%;
   animation: fadeInRight 0.4s;
-  label {
-    color: white;
-  }
   &-form {
     display: flex;
     flex-direction: column;
@@ -20,11 +17,11 @@
   &-footer {
     display: flex;
     justify-content: space-between;
-    button{
+    margin-top: 1.5rem;
+    button {
       color: white;
       // padding: 0.25rem;
       padding: 0;
-      margin-top: 1.5rem;
     }
   }
 }

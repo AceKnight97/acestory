@@ -8,3 +8,7 @@ export interface CheckingSignUp {
   passwordErr?: String;
   confirmPasswordErr?: String;
 }
+
+export interface CheckingForgot {
+  emailErr?: String;
+}

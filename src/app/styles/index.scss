@@ -10,6 +10,14 @@ button:disabled {
   // border-color: -internal-light-dark(rgba(118, 118, 118, 0.3), rgba(195, 195, 195, 0.3));
 }
 
-.flex{
+.flex {
   display: flex;
+  &-c {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+label {
+  color: white;
 }

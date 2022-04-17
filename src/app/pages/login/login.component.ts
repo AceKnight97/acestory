@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
   auth: Observable<AuthInterface> | undefined;
   loginForm: FormBuilder | any;
   registerForm: FormBuilder | any;
-  currentPage: String = SIGN_IN;
+  currentPage: String = FORGOT_PASSWORD;
   aasd = new Object();
 
   constructor(
@@ -30,8 +30,7 @@ export class LoginComponent implements OnInit {
     private store: Store<AppState>,
     private localStorage: LocalStorage,
     private _router: Router
-  ) {
-  }
+  ) {}
 
   public onFileChanged(event: any) {}
 
@@ -39,7 +38,11 @@ export class LoginComponent implements OnInit {
 
   onClickSignUp(): void {
     this.currentPage = SIGN_UP;
-    console.log({currentPage: this.currentPage})
+    console.log({ currentPage: this.currentPage });
+  }
+
+  onClickForgot(): void {
+    this.currentPage = FORGOT_PASSWORD;
   }
 
   onClickSignIn(): void {
@@ -47,7 +50,7 @@ export class LoginComponent implements OnInit {
   }
 
   getCurrentPage() {
-    console.log({getCurrentPage: this.currentPage})
+    console.log({ getCurrentPage: this.currentPage });
     return this.currentPage;
   }
 

@@ -30,6 +30,8 @@ import { HomeBodyComponent } from './components/pages/home/home-body/home-body.c
 import { UserHomeComponent } from './pages/user-home/user-home.component';
 import { SignInComponent } from './pages/sign-in/sign-in.component';
 import { SignUpComponent } from './pages/sign-up/sign-up.component';
+import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
+import { CodeInputModule } from 'angular-code-input';
 
 @NgModule({
   declarations: [
@@ -55,6 +57,7 @@ import { SignUpComponent } from './pages/sign-up/sign-up.component';
     UserHomeComponent,
     SignInComponent,
     SignUpComponent,
+    ForgotPasswordComponent,
   ],
   imports: [
     BrowserModule,
@@ -63,6 +66,7 @@ import { SignUpComponent } from './pages/sign-up/sign-up.component';
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
+    CodeInputModule,
     StoreModule.forRoot(reducers),
   ],
   providers: [],

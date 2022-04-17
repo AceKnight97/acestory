@@ -16,7 +16,9 @@
     <button mat-raised-button type="submit" class="sign-in-btn">Sign in</button>
 
     <div class="sign-in-footer">
-      <button mat-button type="button">Forgot password</button>
+      <button mat-button (click)="forgot()" type="button">
+        Forgot password
+      </button>
 
       <button mat-button (click)="signUp()" type="button">Sign up</button>
     </div>

@@ -24,9 +24,16 @@
             *ngSwitchCase="'SIGN_UP'"
             (onClickSignIn)="onClickSignIn()"
           ></app-sign-up>
+
+          <app-forgot-password
+            *ngSwitchCase="'FORGOT_PASSWORD'"
+            (onClickSignIn)="onClickSignIn()"
+          ></app-forgot-password>
+
           <app-sign-in
             *ngSwitchDefault
             (onClickSignUp)="onClickSignUp()"
+            (onClickForgot)="onClickForgot()"
           ></app-sign-in>
         </div>
       </div>
