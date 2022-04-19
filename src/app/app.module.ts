@@ -28,11 +28,14 @@ import { HomeHeaderComponent } from './components/pages/home/home-header/home-he
 import { HomeFooterComponent } from './components/pages/home/home-footer/home-footer.component';
 import { HomeBodyComponent } from './components/pages/home/home-body/home-body.component';
 import { UserHomeComponent } from './pages/user-home/user-home.component';
-import { SignInComponent } from './pages/sign-in/sign-in.component';
-import { SignUpComponent } from './pages/sign-up/sign-up.component';
-import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
+import { SignInComponent } from './pages/login/sign-in/sign-in.component';
+import { SignUpComponent } from './pages/login/sign-up/sign-up.component';
+import { ForgotPasswordComponent } from './pages/login/forgot-password/forgot-password.component';
 import { CodeInputModule } from 'angular-code-input';
 import { NewsFeedComponent } from './pages/news-feed/news-feed.component';
+import { NewsFeedHeaderComponent } from './pages/news-feed/news-feed-header/news-feed-header.component';
+import { NewsFeedBodyComponent } from './pages/news-feed/news-feed-body/news-feed-body.component';
+import { NewsFeedFooterComponent } from './pages/news-feed/news-feed-footer/news-feed-footer.component';
 
 @NgModule({
   declarations: [
@@ -60,6 +63,9 @@ import { NewsFeedComponent } from './pages/news-feed/news-feed.component';
     SignUpComponent,
     ForgotPasswordComponent,
     NewsFeedComponent,
+    NewsFeedHeaderComponent,
+    NewsFeedBodyComponent,
+    NewsFeedFooterComponent,
   ],
   imports: [
     BrowserModule,

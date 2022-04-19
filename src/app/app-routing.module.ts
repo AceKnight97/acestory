@@ -9,6 +9,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { LoginComponent } from './pages/login/login.component';
 import { TestComponent } from './pages/test/test.component';
 import { CreateCVComponent } from './pages/createcv/createcv.component';
+import { NewsFeedComponent } from './pages/news-feed/news-feed.component';
 
 const routes: Routes = [
   {
@@ -21,10 +22,11 @@ const routes: Routes = [
     //   },
     // ]
   },
+  { path: 'news-feed', component: NewsFeedComponent },
   { path: 'createcv', component: CreateCVComponent },
   { path: 'test', component: TestComponent },
   { path: 'home', component: HomeComponent },
-  { path: '**', redirectTo: '/login', pathMatch: 'full' },
+  { path: '**', redirectTo: '/news-feed', pathMatch: 'full' },
 ];
 
 @NgModule({
