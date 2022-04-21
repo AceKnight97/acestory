@@ -22,3 +22,16 @@ button:disabled {
 label {
   color: white;
 }
+
+.news-feed {
+  &-header,
+  &-footer {
+    padding: 0 1.5rem;
+    display: flex;
+    align-items: center;
+  }
+  &-body {
+  }
+  // ,
+  // &-footer
+}

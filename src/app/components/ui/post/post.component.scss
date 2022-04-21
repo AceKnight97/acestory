@@ -1,0 +1,43 @@
+@import "../../../styles/index.scss";
+
+.post {
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  // align-items: center;
+  padding: 1.5rem;
+  width: 100%;
+  flex: 1;
+  &-left,
+  &-right {
+    flex: 1;
+  }
+  &-left {
+    margin-right: 1.5rem;
+    &-title{
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+    &-content{
+      margin-top: 1rem;
+    }
+  }
+  &-right {
+    margin-left: 1.5rem;
+    display: flex;
+    flex-direction: row;
+    overflow: auto;
+    justify-content: center;
+    align-items: center;
+    &-wrap{
+      width: max-content;
+      display: flex;
+    }
+    &-img{
+      object-fit: contain;
+      // max-width: 45%;
+      max-width: 100px;
+    }
+  }
+}

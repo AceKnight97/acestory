@@ -1,2 +1,7 @@
 <div class="news-feed-body">
+  <!-- <div class="news-feed-body-bg">Welcome to Stories</div> -->
+  <div *ngFor="let a of ['a', 'b', 'c', 'd','e', 'f']" class="news-feed-body-main">
+    <app-post class="w-100"></app-post>
+  </div>
+  <app-news-feed-footer></app-news-feed-footer>
 </div>

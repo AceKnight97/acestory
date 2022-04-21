@@ -7,7 +7,7 @@
     "homepage": "https://AceKnight97.github.io/acestory",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng g s pages/news-feed/news-feed-footer/news-feed-footer --skip-tests ; ng g c pages/news-feed/news-feed-footer --skip-tests",
+    "test": "ng g s components/ui/post/post --skip-tests ; ng g c components/ui/post --skip-tests",
     "predeploy": "ng build",
     "deploy": "ngh --dir dist/acestory"
   },

@@ -36,6 +36,7 @@ import { NewsFeedComponent } from './pages/news-feed/news-feed.component';
 import { NewsFeedHeaderComponent } from './pages/news-feed/news-feed-header/news-feed-header.component';
 import { NewsFeedBodyComponent } from './pages/news-feed/news-feed-body/news-feed-body.component';
 import { NewsFeedFooterComponent } from './pages/news-feed/news-feed-footer/news-feed-footer.component';
+import { PostComponent } from './components/ui/post/post.component';
 
 @NgModule({
   declarations: [
@@ -66,6 +67,7 @@ import { NewsFeedFooterComponent } from './pages/news-feed/news-feed-footer/news
     NewsFeedHeaderComponent,
     NewsFeedBodyComponent,
     NewsFeedFooterComponent,
+    PostComponent,
   ],
   imports: [
     BrowserModule,
