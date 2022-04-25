@@ -37,6 +37,8 @@ import { TestComponent } from './pages/test/test.component';
 import { UserHomeComponent } from './pages/user-home/user-home.component';
 import { YourPageComponent } from './pages/your-page/your-page.component';
 import { reducers } from './reducers';
+import { CreatePostComponent } from './pages/create-post/create-post.component';
+import { CreatePostBodyComponent } from './pages/create-post/create-post-body/create-post-body.component';
 
 
 @NgModule({
@@ -70,6 +72,8 @@ import { reducers } from './reducers';
     YourPageComponent,
     InnerHeaderComponent,
     InnerFooterComponent,
+    CreatePostComponent,
+    CreatePostBodyComponent,
   ],
   imports: [
     BrowserModule,

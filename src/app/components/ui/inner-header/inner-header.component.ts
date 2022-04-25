@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { ROUTING_ENUMS } from 'src/app/models';
 
 
-const {YOUR_PAGE,LOGIN, NEW_FEEDS}=ROUTING_ENUMS;
+const {YOUR_PAGE,LOGIN, NEW_FEEDS, CREATE_POST}=ROUTING_ENUMS;
 
 @Component({
   selector: 'app-inner-header',
@@ -27,6 +27,13 @@ export class InnerHeaderComponent implements OnInit {
       return;
     }
     this._router.navigate([YOUR_PAGE]);
+  }
+
+  createPost() {
+    if (this.location.includes(CREATE_POST)) {
+      return;
+    }
+    this._router.navigate([CREATE_POST]);
   }
 
   newsFeedClick() {
