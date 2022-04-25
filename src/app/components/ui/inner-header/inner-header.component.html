@@ -1,12 +1,12 @@
-<div class="news-feed-header">
-  <div class="news-feed-header-left">
-    <button class="news-feed-header-title b" (click)="newsFeedClick()">
+<div class="inner-header">
+  <div class="inner-header-left">
+    <button class="inner-header-title b" (click)="newsFeedClick()">
       Ace Story
     </button>
   </div>
-  <div class="news-feed-header-right">
+  <div class="inner-header-right">
 
-    <button class="news-feed-header-create-post nor-btn">
+    <button class="inner-header-create-post nor-btn">
       Create Post
     </button>
 
@@ -14,14 +14,14 @@
       <button
         type="button"
         id="dropdownManual"
-        class="news-feed-header-email"
+        class="inner-header-email"
         ngbDropdownAnchor
         (focus)="myDrop.open()"
       >
         {{ getFormatedEmail() }}
       </button>
       <div ngbDropdownMenu aria-labelledby="dropdownManual">
-        <button ngbDropdownItem>Your page</button>
+        <button ngbDropdownItem (click)="yourPage()">Your page</button>
         <button ngbDropdownItem (click)="logout()">Log out</button>
       </div>
     </div>

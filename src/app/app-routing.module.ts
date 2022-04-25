@@ -11,6 +11,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { NewsFeedComponent } from './pages/news-feed/news-feed.component';
 import { TestComponent } from './pages/test/test.component';
+import { YourPageComponent } from './pages/your-page/your-page.component';
 
 const routes: Routes = [
   {
@@ -27,6 +28,7 @@ const routes: Routes = [
   { path: 'createcv', component: CreateCVComponent },
   { path: 'test', component: TestComponent },
   { path: 'home', component: HomeComponent },
+  { path: 'your-page', component: YourPageComponent },
   { path: '**', redirectTo: '/news-feed', pathMatch: 'full' },
 ];
 

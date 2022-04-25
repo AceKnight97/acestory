@@ -1,9 +1,13 @@
 @import "../../../styles/index.scss";
 
-.news-feed-header {
+.inner-header {
   height: 4rem;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
   justify-content: space-between;
   color: $yellow_1;
+  background-color: black;
   &-title,
   &-email {
     background: transparent;
