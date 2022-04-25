@@ -1,15 +1,16 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './pages/home/home.component';
 import { MatButtonModule } from '@angular/material/button';
-import { NzButtonModule } from 'ng-zorro-antd/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
-import { LoginComponent } from './pages/login/login.component';
-import { TestComponent } from './pages/test/test.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { RouterModule, Routes } from '@angular/router';
+import { NzButtonModule } from 'ng-zorro-antd/button';
 import { CreateCVComponent } from './pages/createcv/createcv.component';
+import { HomeComponent } from './pages/home/home.component';
+import { LoginComponent } from './pages/login/login.component';
 import { NewsFeedComponent } from './pages/news-feed/news-feed.component';
+import { TestComponent } from './pages/test/test.component';
 
 const routes: Routes = [
   {
@@ -38,6 +39,7 @@ const routes: Routes = [
     MatIconModule,
     MatInputModule,
     MatSelectModule,
+    MatProgressSpinnerModule,
   ],
 })
 export class AppRoutingModule {}

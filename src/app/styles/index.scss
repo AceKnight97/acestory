@@ -3,6 +3,7 @@
 @import "./reused";
 @import "./animations";
 @import "./colors";
+@import "./vars";
 
 button:disabled {
   background-color: #ededed !important;
@@ -34,4 +35,9 @@ label {
   }
   // ,
   // &-footer
+}
+
+.nor-btn {
+  // display: flex;
+  background-color: transparent;
 }

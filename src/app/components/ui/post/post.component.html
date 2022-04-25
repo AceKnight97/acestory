@@ -1,17 +1,29 @@
 <div class="post">
   <div class="post-left">
-    <div class="post-left-title">{{ title }}</div>
+    <div class="post-left-header">
+      <div class="post-left-header-t-a">
+        <div class="post-left-title">{{ title }}</div>
+        <div class="post-left-author">- by {{ author }}</div>
+      </div>
+      <div class="post-left-date">{{ renderTime() }}</div>
+    </div>
     <div class="post-left-content">{{ content }}</div>
   </div>
 
   <div class="post-right">
-    <div *ngFor="let a of [1, 2, 3, 4, 5]" class="post-right-wrap">
-      <img
-        src="assets/test-icon.png"
-        alt="Logo icon"
-        title="Logo"
-        class="post-right-img"
-      />
-    </div>
+    <ngb-carousel
+      *ngIf="images?.length !== 0; else noImgs"
+      [interval]="8 * 1000"
+    >
+      <ng-template ngbSlide *ngFor="let image of images">
+        <div class="picsum-img-wrapper">
+          <img [src]="image" alt="Random slide" />
+        </div>
+        <div class="carousel-caption">
+          This carousel hides navigation arrows and indicators.
+        </div>
+      </ng-template>
+    </ngb-carousel>
+    <ng-template #noImgs><mat-spinner></mat-spinner></ng-template>
   </div>
 </div>

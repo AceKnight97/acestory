@@ -1,16 +1,38 @@
 import { Component, OnInit } from '@angular/core';
+import * as _ from 'lodash';
+import * as moment from 'moment';
+import {faker} from '@faker-js/faker';
 
 @Component({
   selector: 'app-post',
   templateUrl: './post.component.html',
-  styleUrls: ['./post.component.scss']
+  styleUrls: ['./post.component.scss'],
 })
 export class PostComponent implements OnInit {
-  title = 'Test';
-  content = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";
-  constructor() { }
+  title = faker.name.jobTitle();
+  content = faker.lorem.paragraphs();
+  date = moment().add(_.random(-24, 24), 'hours');
+  author = faker.name.firstName() + ' ' + faker.name.lastName();
+  isEdited = _.random();
+  // images = [944, 1011, 984].map((n) => `https://picsum.photos/id/${n}/900/500`);
+  images: any[] | undefined = [];
+
+  constructor() {}
 
   ngOnInit(): void {
+    setTimeout(() => {
+      this.images= [944, 1011, 984].map((n) => `https://picsum.photos/id/${n}/900/500`);
+    }, 1234);
+    // console.log({images: this.images})
   }
 
+  renderTime() {
+    const preText = this.isEdited ? 'Edited at ' : 'Created at ';
+    if (
+      moment(this.date).isBetween(moment().startOf('days'), moment().endOf('days'))
+    ) {
+      return preText + this.date.format('HH:mm');
+    }
+    return preText + this.date.format('DD/MM/YY - HH:mm');
+  }
 }

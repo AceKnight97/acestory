@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-news-feed-header',
@@ -7,14 +8,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewsFeedHeaderComponent implements OnInit {
   email = 'Triet.TruongThanh@vn.Bosch.com';
-  constructor() {}
+  formatedE = this.email.slice(0, this.email.indexOf('@'));
+  location = window.location.pathname;
+  constructor(private _router: Router) {}
 
   ngOnInit(): void {}
 
+  logout() {
+    this._router.navigate(['login']);
+  }
+
+  newsFeedClick() {
+    if (this.location.includes('news-feed')) {
+      return;
+    }
+    this._router.navigate(['news-feed']);
+  }
+
   getFormatedEmail() {
-    const formatedE = this.email.slice(0, this.email.indexOf('@'));
-    return formatedE.length > 25
-      ? formatedE.slice(0, 25) + '...'
-      : formatedE;
+    return this.formatedE.length > 25
+      ? this.formatedE.slice(0, 25) + '...'
+      : this.formatedE;
   }
 }

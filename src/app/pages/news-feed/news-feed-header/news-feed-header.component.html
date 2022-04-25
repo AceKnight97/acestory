@@ -1,4 +1,29 @@
 <div class="news-feed-header">
-  <div class="news-feed-header- b">Ace Story</div>
-  <div class="news-feed-header-email">{{getFormatedEmail()}}</div>
+  <div class="news-feed-header-left">
+    <button class="news-feed-header-title b" (click)="newsFeedClick()">
+      Ace Story
+    </button>
+  </div>
+  <div class="news-feed-header-right">
+
+    <button class="news-feed-header-create-post nor-btn">
+      Create Post
+    </button>
+
+    <div class="d-inline-block" ngbDropdown #myDrop="ngbDropdown">
+      <button
+        type="button"
+        id="dropdownManual"
+        class="news-feed-header-email"
+        ngbDropdownAnchor
+        (focus)="myDrop.open()"
+      >
+        {{ getFormatedEmail() }}
+      </button>
+      <div ngbDropdownMenu aria-labelledby="dropdownManual">
+        <button ngbDropdownItem>Your page</button>
+        <button ngbDropdownItem (click)="logout()">Log out</button>
+      </div>
+    </div>
+  </div>
 </div>

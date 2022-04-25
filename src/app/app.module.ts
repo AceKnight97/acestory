@@ -37,6 +37,7 @@ import { NewsFeedHeaderComponent } from './pages/news-feed/news-feed-header/news
 import { NewsFeedBodyComponent } from './pages/news-feed/news-feed-body/news-feed-body.component';
 import { NewsFeedFooterComponent } from './pages/news-feed/news-feed-footer/news-feed-footer.component';
 import { PostComponent } from './components/ui/post/post.component';
+import { NgbModule, NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -76,7 +77,7 @@ import { PostComponent } from './components/ui/post/post.component';
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    CodeInputModule,
+    CodeInputModule, NgbModule, NgbPaginationModule,
     StoreModule.forRoot(reducers),
   ],
   providers: [],

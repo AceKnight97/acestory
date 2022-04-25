@@ -92,7 +92,9 @@ export class SignInComponent implements OnInit, OnChanges {
     if (!_.isEmpty(checking)) {
       this.emailErr = checking.emailErr || '';
       this.passwordErr = checking.passwordErr || '';
+      return;
     }
+    this._router.navigate(['news-feed']);
 
     // this.digitalcvSv
     //   .login(signInForm.email, signInForm.password)

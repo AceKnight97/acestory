@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
   auth: Observable<AuthInterface> | undefined;
   loginForm: FormBuilder | any;
   registerForm: FormBuilder | any;
-  currentPage: String = FORGOT_PASSWORD;
+  currentPage: String = SIGN_IN;
   aasd = new Object();
 
   constructor(

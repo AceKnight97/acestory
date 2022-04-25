@@ -1,8 +1,24 @@
 @import "../../../styles/index.scss";
 
-.news-feed-header{
+.news-feed-header {
   height: 4rem;
   justify-content: space-between;
   color: $yellow_1;
-}
+  &-title,
+  &-email {
+    background: transparent;
+    outline: none;
+    border: none;
+  }
+  &-left{
 
+  }
+  &-right{
+    display: flex;
+    flex-direction: row;
+  }
+  &-create-post{
+    margin-right: 2rem;
+  }
+
+}

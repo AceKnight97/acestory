@@ -3,4 +3,8 @@
 .news-feed-footer {
   height: 4rem;
   background-color: white;
+  justify-content: space-between;
+  &-copry-right{
+    font-weight: bold;
+  }
 }
