@@ -16,6 +16,7 @@ import { HomeHeaderComponent } from './components/pages/home/home-header/home-he
 import { FoodTableComponent } from './components/tables/food-table/food-table.component';
 import { CertificateComponent } from './components/ui/certificate/certificate.component';
 import { EducationComponent } from './components/ui/education/education.component';
+import { InnerFooterComponent } from './components/ui/inner-footer/inner-footer.component';
 import { InnerHeaderComponent } from './components/ui/inner-header/inner-header.component';
 import { OtherSkillsComponent } from './components/ui/other-skills/other-skills.component';
 import { PostComponent } from './components/ui/post/post.component';
@@ -31,7 +32,6 @@ import { LoginComponent } from './pages/login/login.component';
 import { SignInComponent } from './pages/login/sign-in/sign-in.component';
 import { SignUpComponent } from './pages/login/sign-up/sign-up.component';
 import { NewsFeedBodyComponent } from './pages/news-feed/news-feed-body/news-feed-body.component';
-import { NewsFeedFooterComponent } from './pages/news-feed/news-feed-footer/news-feed-footer.component';
 import { NewsFeedComponent } from './pages/news-feed/news-feed.component';
 import { TestComponent } from './pages/test/test.component';
 import { UserHomeComponent } from './pages/user-home/user-home.component';
@@ -66,10 +66,10 @@ import { reducers } from './reducers';
     ForgotPasswordComponent,
     NewsFeedComponent,
     NewsFeedBodyComponent,
-    NewsFeedFooterComponent,
     PostComponent,
     YourPageComponent,
     InnerHeaderComponent,
+    InnerFooterComponent,
   ],
   imports: [
     BrowserModule,

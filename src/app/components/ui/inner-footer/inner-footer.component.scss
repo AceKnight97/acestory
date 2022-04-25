@@ -1,9 +1,12 @@
 @import "../../../styles/index.scss";
 
-.news-feed-footer {
+.inner-footer {
   height: 4rem;
   background-color: white;
   justify-content: space-between;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
   &-copry-right{
     font-weight: bold;
   }
