@@ -3,10 +3,10 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AngularEditorModule } from '@kolkov/angular-editor';
 import { NgbModule, NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 import { StoreModule } from '@ngrx/store';
 import { CodeInputModule } from 'angular-code-input';
+import { NgxEditorModule } from 'ngx-editor';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { InputCTComponent } from './components/inputs/input-ct/input-ct.component';
@@ -15,6 +15,7 @@ import { HomeBodyComponent } from './components/pages/home/home-body/home-body.c
 import { HomeFooterComponent } from './components/pages/home/home-footer/home-footer.component';
 import { HomeHeaderComponent } from './components/pages/home/home-header/home-header.component';
 import { FoodTableComponent } from './components/tables/food-table/food-table.component';
+import { CarouselCtComponent } from './components/ui/carousel-ct/carousel-ct.component';
 import { CertificateComponent } from './components/ui/certificate/certificate.component';
 import { EducationComponent } from './components/ui/education/education.component';
 import { InnerFooterComponent } from './components/ui/inner-footer/inner-footer.component';
@@ -40,7 +41,8 @@ import { TestComponent } from './pages/test/test.component';
 import { UserHomeComponent } from './pages/user-home/user-home.component';
 import { YourPageComponent } from './pages/your-page/your-page.component';
 import { reducers } from './reducers';
-import { NgxEditorModule } from 'ngx-editor';
+import { ImageUploadComponent } from './components/ui/image-upload/image-upload.component';
+import { ImageDragDirective } from './directives/image-drag.directive';
 
 @NgModule({
   declarations: [
@@ -75,6 +77,9 @@ import { NgxEditorModule } from 'ngx-editor';
     InnerFooterComponent,
     CreatePostComponent,
     CreatePostBodyComponent,
+    CarouselCtComponent,
+    ImageUploadComponent,
+    ImageDragDirective,
   ],
   imports: [
     BrowserModule,
@@ -86,7 +91,6 @@ import { NgxEditorModule } from 'ngx-editor';
     CodeInputModule,
     NgbModule,
     NgbPaginationModule,
-    AngularEditorModule,
     NgxEditorModule,
     StoreModule.forRoot(reducers),
   ],

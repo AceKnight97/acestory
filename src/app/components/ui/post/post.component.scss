@@ -57,16 +57,6 @@
     overflow: auto;
     justify-content: center;
     align-items: center;
-    img {
-      max-width: 100%;
-    }
-    .carousel-caption {
-      font-size: 0.75rem;
-    }
-    &-img {
-      object-fit: contain;
-      max-width: 100px;
-    }
   }
 }
 

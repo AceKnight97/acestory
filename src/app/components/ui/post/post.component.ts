@@ -14,7 +14,7 @@ export class PostComponent implements OnInit {
   date = moment().add(_.random(-24, 24), 'hours');
   author = faker.name.firstName() + ' ' + faker.name.lastName();
   isEdited = _.random();
-  images: any[] | undefined = [];
+  images: string[] = [];
 
   constructor() {}
 

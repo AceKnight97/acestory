@@ -1,0 +1,10 @@
+<div class="image-load">
+  <div class="image-load-box" appImageDrag (files)="filesDropped($event)">
+    <span class="">Drop your files here</span>
+  </div>
+  <div class="image-load-imgs">
+    <div *ngFor="let file of uploadedFiles">
+      <img [src]="file.url" title="Image" />
+    </div>
+  </div>
+</div>

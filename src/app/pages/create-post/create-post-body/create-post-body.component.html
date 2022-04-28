@@ -12,20 +12,11 @@
   </div>
 
   <div class="create-post-body-right">
-    <ngb-carousel
-      *ngIf="images?.length !== 0; else noImgs"
-      [interval]="8 * 1000"
-    >
-      <ng-template ngbSlide *ngFor="let image of images">
-        <div class="picsum-img-wrapper">
-          <img [src]="image" alt="Random slide" />
-        </div>
-        <div class="carousel-caption">
-          This carousel hides navigation arrows and indicators.
-        </div>
-      </ng-template>
-    </ngb-carousel>
-    <ng-template #noImgs><mat-spinner></mat-spinner></ng-template>
+
+<app-image-upload></app-image-upload>
+
+
+    <app-carousel-ct [images]="images"></app-carousel-ct>
 
     <input
       class="dis-none"

@@ -1,0 +1,13 @@
+@import "../../../styles/index.scss";
+.image-load {
+  &-box {
+    width: 500px;
+    height: 250px;
+    text-align: center;
+  }
+  &-img {
+    margin-top: 20px;
+    width: 500px;
+    height: 400px;
+  }
+}

@@ -1,8 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnChanges, OnDestroy, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
-import { AngularEditorConfig, UploadResponse } from '@kolkov/angular-editor';
-import { Editor, toHTML, toDoc } from 'ngx-editor';
+import { Editor } from 'ngx-editor';
 import { CreatePostBodyService } from './create-post-body.service';
 
 // const html = toHTML(jsonDoc, schema); // schema is optional
