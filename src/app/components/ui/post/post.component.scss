@@ -27,7 +27,6 @@
     &-header {
       display: flex;
       justify-content: space-between;
-      // align-items: center;
       &-t-a {
         display: flex;
         flex-direction: row;
@@ -64,15 +63,8 @@
     .carousel-caption {
       font-size: 0.75rem;
     }
-    // justify-content: center;
-    // align-items: center;
-    &-wrap {
-      // display: flex;
-      // width: max-content;
-    }
     &-img {
       object-fit: contain;
-      // max-width: 45%;
       max-width: 100px;
     }
   }

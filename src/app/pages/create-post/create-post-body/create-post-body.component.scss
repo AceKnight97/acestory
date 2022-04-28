@@ -2,6 +2,64 @@
 
 .create-post-body {
   height: calc(100% - 4rem);
-  background: black;
-  color: $yellow_1;
+  color: black;
+  display: flex;
+  // justify-content: center;
+  // align-items: center;
+  &-left,
+  &-right {
+    flex: 1;
+    padding: 1.5rem;
+  }
+  &-story-input{
+    height: 256px;
+  }
+  &-left {
+    margin-right: 1.5rem;
+    &-header {
+      display: flex;
+      justify-content: space-between;
+      // align-items: center;
+      &-t-a {
+        display: flex;
+        flex-direction: row;
+      }
+    }
+    &-title {
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+    &-author {
+      font-size: $p12;
+      margin-left: $p12;
+      text-decoration: underline;
+      font-style: italic;
+      color: $yellow_1;
+    }
+    &-date {
+      font-size: 0.75rem;
+    }
+    &-content {
+      margin-top: 1rem;
+    }
+  }
+  &-right {
+    margin-left: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    justify-content: center;
+    align-items: center;
+    background: black;
+    img {
+      max-width: 100%;
+    }
+    .carousel-caption {
+      font-size: 0.75rem;
+    }
+    &-img {
+      object-fit: contain;
+      max-width: 100px;
+    }
+  }
 }

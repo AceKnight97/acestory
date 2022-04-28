@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AngularEditorModule } from '@kolkov/angular-editor';
 import { NgbModule, NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 import { StoreModule } from '@ngrx/store';
 import { CodeInputModule } from 'angular-code-input';
@@ -24,6 +25,8 @@ import { ProgrammingLanguageComponent } from './components/ui/programming-langua
 import { ProjectComponent } from './components/ui/project/project.component';
 import { ReferenceComponent } from './components/ui/reference/reference.component';
 import { WorkingExperienceComponent } from './components/ui/working-experience/working-experience.component';
+import { CreatePostBodyComponent } from './pages/create-post/create-post-body/create-post-body.component';
+import { CreatePostComponent } from './pages/create-post/create-post.component';
 import { CreateCVComponent } from './pages/createcv/createcv.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LearningComponent } from './pages/learning/learning.component';
@@ -37,9 +40,7 @@ import { TestComponent } from './pages/test/test.component';
 import { UserHomeComponent } from './pages/user-home/user-home.component';
 import { YourPageComponent } from './pages/your-page/your-page.component';
 import { reducers } from './reducers';
-import { CreatePostComponent } from './pages/create-post/create-post.component';
-import { CreatePostBodyComponent } from './pages/create-post/create-post-body/create-post-body.component';
-
+import { NgxEditorModule } from 'ngx-editor';
 
 @NgModule({
   declarations: [
@@ -82,7 +83,11 @@ import { CreatePostBodyComponent } from './pages/create-post/create-post-body/cr
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    CodeInputModule, NgbModule, NgbPaginationModule,
+    CodeInputModule,
+    NgbModule,
+    NgbPaginationModule,
+    AngularEditorModule,
+    NgxEditorModule,
     StoreModule.forRoot(reducers),
   ],
   providers: [],

@@ -14,7 +14,6 @@ export class PostComponent implements OnInit {
   date = moment().add(_.random(-24, 24), 'hours');
   author = faker.name.firstName() + ' ' + faker.name.lastName();
   isEdited = _.random();
-  // images = [944, 1011, 984].map((n) => `https://picsum.photos/id/${n}/900/500`);
   images: any[] | undefined = [];
 
   constructor() {}
@@ -23,7 +22,6 @@ export class PostComponent implements OnInit {
     setTimeout(() => {
       this.images= [944, 1011, 984].map((n) => `https://picsum.photos/id/${n}/900/500`);
     }, 1234);
-    // console.log({images: this.images})
   }
 
   renderTime() {
