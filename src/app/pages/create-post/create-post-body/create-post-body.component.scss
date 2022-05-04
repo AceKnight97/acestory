@@ -1,7 +1,8 @@
 @import "../../../styles/index.scss";
 
 .create-post-body {
-  height: calc(100% - 4rem);
+  // height: calc(100% - 4rem);
+  height: 100%;
   color: black;
   display: flex;
   // justify-content: center;
@@ -10,8 +11,9 @@
   &-right {
     flex: 1;
     padding: 1.5rem;
+    height: 100%;
   }
-  &-story-input{
+  &-story-input {
     height: 256px;
   }
   &-left {
@@ -44,12 +46,11 @@
     }
   }
   &-right {
-    margin-left: 1.5rem;
     display: flex;
     flex-direction: column;
-    overflow: auto;
-    justify-content: center;
-    align-items: center;
+    // overflow: auto;
+    // justify-content: center;
+    // align-items: center;
     background: black;
     img {
       max-width: 100%;
@@ -61,5 +62,11 @@
       object-fit: contain;
       max-width: 100px;
     }
+  }
+}
+
+@media only screen and (max-width: 1004px) {
+  .create-post-body {
+    flex-direction: column;
   }
 }

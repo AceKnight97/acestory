@@ -1,10 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnChanges, OnDestroy, OnInit } from '@angular/core';
-import { Editor } from 'ngx-editor';
+import { FormBuilder } from '@angular/forms';
+import { Editor, Toolbar } from 'ngx-editor';
 import { CreatePostBodyService } from './create-post-body.service';
 
 // const html = toHTML(jsonDoc, schema); // schema is optional
 // const jsonDoc = toDoc(html);
+
 @Component({
   selector: 'app-create-post-body',
   templateUrl: './create-post-body.component.html',
@@ -12,16 +14,28 @@ import { CreatePostBodyService } from './create-post-body.service';
 })
 export class CreatePostBodyComponent implements OnInit, OnChanges, OnDestroy {
   editor: Editor = new Editor();
-  html = '';
-  html2 = '';
   selectedFile: any;
   images: string[] = [];
+  toolbar: Toolbar;
+  postForm;
+  titleErr = '';
+
   constructor(
+    private fb: FormBuilder,
     private httpClient: HttpClient,
     private createPostBodyService: CreatePostBodyService
-  ) {}
+  ) {
+    this.toolbar = createPostBodyService.getToolbar();
 
-  ngOnInit(): void {}
+    this.postForm = this.fb.group({
+      title: [''],
+      html: ['']
+    });
+  }
+
+  ngOnInit(): void {
+    console.log({ editor: this.editor });
+  }
 
   // make sure to destory the editor
   ngOnDestroy(): void {
@@ -51,5 +65,9 @@ export class CreatePostBodyComponent implements OnInit, OnChanges, OnDestroy {
       .subscribe((event) => {
         console.log(event); // handle event here
       });
+  }
+
+  onFormSubmit(){
+
   }
 }

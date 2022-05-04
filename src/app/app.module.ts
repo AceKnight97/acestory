@@ -1,11 +1,18 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatSelectModule } from '@angular/material/select';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule, NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 import { StoreModule } from '@ngrx/store';
 import { CodeInputModule } from 'angular-code-input';
+import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NgxEditorModule } from 'ngx-editor';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,6 +25,7 @@ import { FoodTableComponent } from './components/tables/food-table/food-table.co
 import { CarouselCtComponent } from './components/ui/carousel-ct/carousel-ct.component';
 import { CertificateComponent } from './components/ui/certificate/certificate.component';
 import { EducationComponent } from './components/ui/education/education.component';
+import { ImageUploadComponent } from './components/ui/image-upload/image-upload.component';
 import { InnerFooterComponent } from './components/ui/inner-footer/inner-footer.component';
 import { InnerHeaderComponent } from './components/ui/inner-header/inner-header.component';
 import { OtherSkillsComponent } from './components/ui/other-skills/other-skills.component';
@@ -26,6 +34,7 @@ import { ProgrammingLanguageComponent } from './components/ui/programming-langua
 import { ProjectComponent } from './components/ui/project/project.component';
 import { ReferenceComponent } from './components/ui/reference/reference.component';
 import { WorkingExperienceComponent } from './components/ui/working-experience/working-experience.component';
+import { ImageDragDirective } from './directives/image-drag.directive';
 import { CreatePostBodyComponent } from './pages/create-post/create-post-body/create-post-body.component';
 import { CreatePostComponent } from './pages/create-post/create-post.component';
 import { CreateCVComponent } from './pages/createcv/createcv.component';
@@ -41,8 +50,6 @@ import { TestComponent } from './pages/test/test.component';
 import { UserHomeComponent } from './pages/user-home/user-home.component';
 import { YourPageComponent } from './pages/your-page/your-page.component';
 import { reducers } from './reducers';
-import { ImageUploadComponent } from './components/ui/image-upload/image-upload.component';
-import { ImageDragDirective } from './directives/image-drag.directive';
 
 @NgModule({
   declarations: [
@@ -92,6 +99,13 @@ import { ImageDragDirective } from './directives/image-drag.directive';
     NgbModule,
     NgbPaginationModule,
     NgxEditorModule,
+    NzButtonModule,
+    MatButtonModule,
+    MatIconModule,
+    MatInputModule,
+    MatSelectModule,
+    MatProgressSpinnerModule,
+    MatFormFieldModule,
     StoreModule.forRoot(reducers),
   ],
   providers: [],

@@ -1,22 +1,32 @@
 <div class="create-post-body">
   <div class="create-post-body-left">
-    <div class="NgxEditor__Wrapper create-post-body-story-input">
-      <ngx-editor-menu [editor]="editor"> </ngx-editor-menu>
-      <ngx-editor
-        [editor]="editor"
-        [(ngModel)]="html"
-        [disabled]="false"
-        placeholder="Tell us your story!"
-      ></ngx-editor>
-    </div>
+    <form
+      [formGroup]="postForm"
+      (ngSubmit)="onFormSubmit()"
+      class="sign-in-form"
+    >
+      <mat-form-field class="example-form-field" appearance="fill" >
+        <label>title</label>
+        <input formControlName="title" title="title" matInput />
+      </mat-form-field>
+
+      <div class="NgxEditor__Wrapper create-post-body-story-input">
+        <ngx-editor-menu [editor]="editor" [toolbar]="toolbar">
+        </ngx-editor-menu>
+        <ngx-editor
+          [editor]="editor"
+          formControlName="html"
+          [disabled]="false"
+          placeholder="Tell us your story!"
+        ></ngx-editor>
+      </div>
+    </form>
   </div>
 
   <div class="create-post-body-right">
+    <app-image-upload class="h-100"></app-image-upload>
 
-<app-image-upload></app-image-upload>
-
-
-    <app-carousel-ct [images]="images"></app-carousel-ct>
+    <!-- <app-carousel-ct [images]="images"></app-carousel-ct>
 
     <input
       class="dis-none"
@@ -28,6 +38,6 @@
       multiple
     />
     <button (click)="fileInput.click()">Select File</button>
-    <button (click)="onUpload()">Upload!</button>
+    <button (click)="onUpload()">Upload!</button> -->
   </div>
 </div>
