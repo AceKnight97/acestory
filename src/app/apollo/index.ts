@@ -1,22 +1,45 @@
-import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-// Apollo
-import { ApolloModule, APOLLO_OPTIONS } from 'apollo-angular';
+import { NgModule } from '@angular/core';
 import {
   ApolloClientOptions,
-  InMemoryCache,
   ApolloLink,
+  DefaultOptions,
+  InMemoryCache,
 } from '@apollo/client/core';
-import { HttpLink } from 'apollo-angular/http';
 import { setContext } from '@apollo/client/link/context';
+import { WebSocketLink } from '@apollo/client/link/ws';
+// Apollo
+import { ApolloModule, APOLLO_OPTIONS } from 'apollo-angular';
+import { HttpLink } from 'apollo-angular/http';
 import { CONFIGS } from '../models';
 
+const { APOLLO_HOST_URL } = CONFIGS;
+const isLocal = APOLLO_HOST_URL.includes('localhost') ? '' : 's';
+
+// const basic = setContext((operation, context) => ({
+//   headers: {
+//     Accept: 'charset=utf-8'
+//   }
+// }));
+const defaultOptions: DefaultOptions = {
+  watchQuery: {
+    fetchPolicy: 'no-cache',
+    errorPolicy: 'ignore',
+  },
+  query: {
+    fetchPolicy: 'no-cache',
+    errorPolicy: 'all',
+  },
+};
+
+const wsLink = new WebSocketLink({
+  uri: `ws${isLocal}://${APOLLO_HOST_URL}`,
+  options: {
+    reconnect: true,
+  },
+});
+
 function createApollo(httpLink: HttpLink): ApolloClientOptions<any> {
-  // const basic = setContext((operation, context) => ({
-  //   headers: {
-  //     Accept: 'charset=utf-8'
-  //   }
-  // }));
   const auth = setContext((operation, context) => {
     // const token = localStorage.getItem('token');
     const token =
@@ -35,15 +58,19 @@ function createApollo(httpLink: HttpLink): ApolloClientOptions<any> {
 
   const link = ApolloLink.from([
     // basic,
+    wsLink,
     auth,
-    httpLink.create({ uri: CONFIGS.HOST_URL }),
+    httpLink.create({ uri: APOLLO_HOST_URL }),
   ]);
 
   return {
     link,
     cache: new InMemoryCache({
-      addTypename: false
+      addTypename: false,
     }),
+    defaultOptions,
+    name: 'web',
+    version: '0.0.1',
   };
 }
 

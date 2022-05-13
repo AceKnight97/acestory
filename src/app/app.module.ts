@@ -12,7 +12,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule, NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 import { StoreModule } from '@ngrx/store';
 import { CodeInputModule } from 'angular-code-input';
-import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NgxEditorModule } from 'ngx-editor';
 import { GraphQLModule } from './apollo';
 import { AppRoutingModule } from './app-routing.module';
@@ -100,7 +99,6 @@ import { reducers } from './reducers';
     NgbModule,
     NgbPaginationModule,
     NgxEditorModule,
-    NzButtonModule,
     MatButtonModule,
     MatIconModule,
     MatInputModule,

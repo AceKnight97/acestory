@@ -12,6 +12,6 @@ export enum ROUTING_ENUMS {
 }
 
 export const CONFIGS = {
-  HOST_URL: 'http://localhost:27017/graphql',
-  // HOST_URL: 'https://graphql-voter-app.herokuapp.com/',
+  APOLLO_HOST_URL: 'http://localhost:27017/graphql',
+  // APOLLO_HOST_URL: 'https://graphql-voter-app.herokuapp.com/',
 }

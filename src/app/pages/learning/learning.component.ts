@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-// import * from 'ng-zorro-antd';
 
 @Component({
   selector: 'app-pages-learning',
