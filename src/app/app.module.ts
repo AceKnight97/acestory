@@ -14,6 +14,7 @@ import { StoreModule } from '@ngrx/store';
 import { CodeInputModule } from 'angular-code-input';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NgxEditorModule } from 'ngx-editor';
+import { GraphQLModule } from './apollo';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { InputCTComponent } from './components/inputs/input-ct/input-ct.component';
@@ -106,6 +107,7 @@ import { reducers } from './reducers';
     MatSelectModule,
     MatProgressSpinnerModule,
     MatFormFieldModule,
+    GraphQLModule,
     StoreModule.forRoot(reducers),
   ],
   providers: [],

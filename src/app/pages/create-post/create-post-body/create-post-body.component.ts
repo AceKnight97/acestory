@@ -29,13 +29,11 @@ export class CreatePostBodyComponent implements OnInit, OnChanges, OnDestroy {
 
     this.postForm = this.fb.group({
       title: [''],
-      html: ['']
+      html: [''],
     });
   }
 
-  ngOnInit(): void {
-    // console.log({ editor: this.editor });
-  }
+  ngOnInit(): void {}
 
   // make sure to destory the editor
   ngOnDestroy(): void {
@@ -46,28 +44,5 @@ export class CreatePostBodyComponent implements OnInit, OnChanges, OnDestroy {
     console.log({ changes });
   }
 
-  onFileChanged(event: any) {
-    const files = event.target.files;
-    console.log({ files });
-    for (const f of files) {
-      this.createPostBodyService.onImagesChange(f, this.images);
-    }
-
-    console.log({ ig: this.images });
-  }
-
-  onUpload() {
-    this.httpClient
-      .post('my-backend.com/file-upload', this.selectedFile, {
-        reportProgress: true,
-        observe: 'events',
-      })
-      .subscribe((event) => {
-        console.log(event); // handle event here
-      });
-  }
-
-  onFormSubmit(){
-
-  }
+  onFormSubmit() {}
 }

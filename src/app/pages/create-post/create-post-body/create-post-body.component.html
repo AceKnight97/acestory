@@ -5,7 +5,7 @@
       (ngSubmit)="onFormSubmit()"
       class="create-post-body-left-form"
     >
-      <mat-form-field class="example-form-field" appearance="fill" >
+      <mat-form-field class="example-form-field" appearance="fill">
         <label>Title</label>
         <input formControlName="title" title="title" matInput />
       </mat-form-field>
@@ -20,24 +20,20 @@
           placeholder="Tell us your story!"
         ></ngx-editor>
       </div>
+
+      <div class="create-post-body-left-post">
+        <button
+          mat-raised-button
+          type="submit"
+          class="create-post-body-left-post-btn"
+        >
+          Post
+        </button>
+      </div>
     </form>
   </div>
 
   <div class="create-post-body-right">
     <app-image-upload class="h-100"></app-image-upload>
-
-    <!-- <app-carousel-ct [images]="images"></app-carousel-ct>
-
-    <input
-      class="dis-none"
-      type="file"
-      (change)="onFileChanged($event)"
-      #fileInput
-      alt="Upload image"
-      title="Ace"
-      multiple
-    />
-    <button (click)="fileInput.click()">Select File</button>
-    <button (click)="onUpload()">Upload!</button> -->
   </div>
 </div>

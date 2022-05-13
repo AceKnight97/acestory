@@ -10,3 +10,8 @@ export enum ROUTING_ENUMS {
   LOGIN = 'login',
   CREATE_POST = 'create-post',
 }
+
+export const CONFIGS = {
+  HOST_URL: 'http://localhost:27017/graphql',
+  // HOST_URL: 'https://graphql-voter-app.herokuapp.com/',
+}

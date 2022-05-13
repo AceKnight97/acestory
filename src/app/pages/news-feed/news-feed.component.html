@@ -1,4 +1,7 @@
-<div class="news-feed">
+<div class="news-feed" *ngIf="!loading">
   <app-inner-header></app-inner-header>
+  <button mat-button (click)="addFood()">
+    Add Food Button
+  </button>
   <app-news-feed-body></app-news-feed-body>
 </div>
