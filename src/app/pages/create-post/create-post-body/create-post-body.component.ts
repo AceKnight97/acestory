@@ -34,7 +34,7 @@ export class CreatePostBodyComponent implements OnInit, OnChanges, OnDestroy {
   }
 
   ngOnInit(): void {
-    console.log({ editor: this.editor });
+    // console.log({ editor: this.editor });
   }
 
   // make sure to destory the editor

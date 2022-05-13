@@ -1,4 +1,4 @@
-@import "../../../styles/index.scss";
+
 
 .create-post-body {
   // height: calc(100% - 4rem);
@@ -18,31 +18,15 @@
   }
   &-left {
     margin-right: 1.5rem;
-    &-header {
-      display: flex;
-      justify-content: space-between;
-      // align-items: center;
-      &-t-a {
-        display: flex;
-        flex-direction: row;
+    &-form{
+      label{
+        color: black;
       }
-    }
-    &-title {
-      font-weight: bold;
-      font-size: 1.5rem;
-    }
-    &-author {
-      font-size: $p12;
-      margin-left: $p12;
-      text-decoration: underline;
-      font-style: italic;
-      color: $yellow_1;
-    }
-    &-date {
-      font-size: 0.75rem;
-    }
-    &-content {
-      margin-top: 1rem;
+      ::ng-deep{
+        .mat-form-field-infix{
+          border-top: none;
+        }
+      }
     }
   }
   &-right {

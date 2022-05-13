@@ -9,13 +9,9 @@ body {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
-}
-
-html {
-  overflow: hidden;
-}
-body {
   display: flex;
   flex-direction: column;
-  margin: 0;
+}
+html {
+  overflow: hidden;
 }
